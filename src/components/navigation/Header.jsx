@@ -65,7 +65,7 @@ const Header = () => {
         }`}
       >
         <div className="flex justify-between items-center p-4 border-b text-white">
-          <span className="font-semibold">Menu</span>
+          <span className="font-semibold">Som-Dev</span>
           <button
             onClick={() => setIsOpen(false)}
             className="text-2xl text-white"
@@ -75,16 +75,16 @@ const Header = () => {
         </div>
 
         <ul className="flex flex-col gap-4 p-4">
-          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">About</li>
-          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">Projects</li>
-          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">Skills</li>
-          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">Contact</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#about">About</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#projects">Projects</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#skills">Skills</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#contact">Contact</li>
 
-          <Link href="/" className="text-blue-600 font-medium">
+          <Link href="https://drive.google.com/file/d/12_gk5hnou5N5i42Ha3SCasv148wSyNRo/view?usp=drive_link" className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">
             Resume
           </Link>
 
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg" href="#contact">
             Contact Me
           </button>
         </ul>
