@@ -75,10 +75,10 @@ const Header = () => {
         </div>
 
         <ul className="flex flex-col gap-4 p-4">
-          <li className="cursor-pointer hover:text-blue-500">About</li>
-          <li className="cursor-pointer hover:text-blue-500">Projects</li>
-          <li className="cursor-pointer hover:text-blue-500">Skills</li>
-          <li className="cursor-pointer hover:text-blue-500">Contact</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">About</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">Projects</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">Skills</li>
+          <li className="font-headline text-sm font-bold tracking-tight uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-300">Contact</li>
 
           <Link href="/" className="text-blue-600 font-medium">
             Resume
