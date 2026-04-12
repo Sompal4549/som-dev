@@ -65,7 +65,7 @@ const Header = () => {
         }`}
       >
         <div className="flex justify-between items-center p-4 border-b text-white">
-          <span className="font-semibold">Som-Dev</span>
+          <span className="font-semibold text-[12px]">Som-Dev</span>
           <button
             onClick={() => setIsOpen(false)}
             className="text-2xl text-white"
