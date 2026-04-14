@@ -33,7 +33,10 @@ export default function RootLayout({
       lang="en"
       className={`${manropeSans.variable} ${interSans.variable} ${space_grotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
