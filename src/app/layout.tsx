@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const manropeSans = Manrope({
   variable: "--font-manrope",
