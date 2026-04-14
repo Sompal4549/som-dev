@@ -3,6 +3,28 @@ import { motion } from "motion/react";
 import { Mail, Send } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Contact() {
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+
+  const response = await fetch(process.env.NEXT_FORMSPREE_POST_URL, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  });
+
+  if (response.ok) {
+    alert("Message sent!");
+    e.target.reset();
+  } else {
+    alert("Something went wrong");
+  }
+};
+
   return (
     <section className="py-32 px-8 bg-surface" id="contact">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -56,10 +78,11 @@ export default function Contact() {
           viewport={{ once: true }}
           className="glass-panel p-6 sm:p-10 rounded-2xl border border-outline-variant/10 shadow-2xl"
         >
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+     <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <label className="font-label text-sm uppercase tracking-widest text-on-surface-variant font-bold">Full Name</label>
               <input 
+              name="name"
                 type="text" 
                 className="w-full bg-surface-container-highest/50 border border-outline-variant/20 rounded-lg px-6 py-4 text-on-surface focus:outline-none focus:border-primary/50 transition-colors" 
                 placeholder="John Doe" 
@@ -69,6 +92,7 @@ export default function Contact() {
               <label className="font-label text-sm uppercase tracking-widest text-on-surface-variant font-bold">Email Address</label>
               <input 
                 type="email" 
+                name="email"
                 className="w-full bg-surface-container-highest/50 border border-outline-variant/20 rounded-lg px-6 py-4 text-on-surface focus:outline-none focus:border-primary/50 transition-colors" 
                 placeholder="john@example.com" 
               />
@@ -77,6 +101,7 @@ export default function Contact() {
               <label className="font-label text-sm uppercase tracking-widest text-on-surface-variant font-bold">Message</label>
               <textarea 
                 rows={5} 
+                name="message"
                 className="w-full bg-surface-container-highest/50 border border-outline-variant/20 rounded-lg px-6 py-4 text-on-surface focus:outline-none focus:border-primary/50 transition-colors" 
                 placeholder="Hi Som-Dev, I'd like to discuss a project..." 
               />
@@ -84,6 +109,7 @@ export default function Contact() {
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              type="submit"
               className="w-full py-4 bg-primary text-on-primary font-headline font-bold rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2"
             >
               Send Message
